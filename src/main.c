@@ -43,6 +43,7 @@ void Send_save_message()
 		send_cmd("AT+QMTPUB=0,0,0,1,\"/a1f2CH9BSx7/ZRH_4G/user/put\" \r\n");
 		delay_us(100000); //0.1s
 		send_cmd("{\"adc\":5} \r\n");
+
 		delay_us(300000); //0.3s
 //		vTaskDelay(400);    //单位2ms
 
