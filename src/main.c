@@ -78,8 +78,14 @@ void Exception_handler()
 	}
 }
 
+#define testFunc
 int main(void)
 {
+#ifdef testFunc
+	DBGMCU_Config(DBGMCU_IWDG_STOP, ENABLE); //DEBUG时看门狗关闭
+	nvic_init();
+#endif
+#ifdef mainFunc
 	nvic_init();
 	pinModeB(GPIO_Pin_5, OUTPUT);			 //IOT设备复位引脚
 	pinModeC(GPIO_Pin_14, OUTPUT);			 //连网成功指示灯
@@ -106,4 +112,5 @@ int main(void)
 	{
 		;
 	}
+#endif
 }
